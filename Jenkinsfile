@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'mvn clean'
+        sh 'mvn clean -Dhttp.proxyHost=web-proxy.sgp.hp.com -Dhttp.proxyPort=8080'
       }
     }
   }
