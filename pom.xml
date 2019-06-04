@@ -7,6 +7,21 @@
   <version>1.0-SNAPSHOT</version>
   <name>my-app</name>
   <url>http://maven.apache.org</url>
+  
+  <scm>
+		<connection>scm:git:git@github.com:prasadblv/simple-java-maven-app.git</connection>
+		<developerConnection>scm:git:git@github.com:prasadblv/simple-java-maven-app.git</developerConnection>
+		<tag>HEAD</tag>
+		<url>scm:git:https://github.com/prasadblv/simple-java-maven-app</url>
+	</scm>
+  
+  <properties>
+      <!-- Unleash Maven Plugin - More Efficient and Reliable Maven Releases -->
+		<!-- https://github.com/shillner/unleash-maven-plugin -->
+		<unleash-maven-plugin.version>2.9.3</unleash-maven-plugin.version>
+		<unleash-scm-provider-git.version>2.2.0</unleash-scm-provider-git.version>
+  </properties> 
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -32,6 +47,18 @@
           </archive>
         </configuration>
       </plugin>
+      <plugin>
+					<groupId>com.itemis.maven.plugins</groupId>
+					<artifactId>unleash-maven-plugin</artifactId>
+					<version>${unleash-maven-plugin.version}</version>
+					<dependencies>
+						<dependency>
+							<groupId>com.itemis.maven.plugins</groupId>
+							<artifactId>unleash-scm-provider-git</artifactId>
+							<version>${unleash-scm-provider-git.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
     </plugins>
   </build>
 </project>
